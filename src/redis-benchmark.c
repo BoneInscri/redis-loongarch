@@ -1852,7 +1852,15 @@ int main(int argc, char **argv) {
             argc++;
         }
         /* Setup argument length */
-        size_t *argvlen = zmalloc(argc*sizeof(size_t));
+        // size_t *argvlen = zmalloc(argc*sizeof(size_t));
+
+        size_t *argvlen = zmalloc(argc * sizeof(size_t));
+        if (argvlen == NULL) {
+            fprintf(stderr, "Error: memory allocation failed\n");
+            exit(1);
+        }
+        memset(argvlen, 0, argc * sizeof(size_t));  
+        
         for (i = 0; i < argc; i++)
             argvlen[i] = sdslen(sds_args[i]);
         do {
