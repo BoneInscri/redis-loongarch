@@ -11,6 +11,10 @@ sh build.sh
 2. 打包生成的文件到output
 
 ```
+sh install.sh
+```
+
+```
 output
 ├── bin
 │   ├── redis-benchmark
