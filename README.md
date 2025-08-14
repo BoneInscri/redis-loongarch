@@ -29,5 +29,24 @@ output
 3. 测试脚本
 
 ```
+# 启动redis-server
+
+./bin/redis-server --daemonize yes
+ps aux | grep redis-server
+```
+
+```
+# 启动redis-benchmark
+./redis-benchmark
+```
+
+```
+# 性能测试（10万请求，50并发）
+./bin/redis-benchmark -n 100000 -c 50
+```
+
+```
+# 单次测试后退出
+./bin/redis-benchmark -n 100000 -q -t set
 ```
 
